@@ -8,7 +8,9 @@ const UserController = require('./app/controllers/UserController');
 const routes = new Router();
 
 const jwtCheck = expressJwt({
-  secret: 'secretkey',
+  secret: process.env.AUTH0_SECRET,
+  audience: process.env.AUTH0_AUDIENCE,
+  issuer: process.env.AUTH0_ISSUER,
 });
 
 routes.post('/login', UserController.login);
