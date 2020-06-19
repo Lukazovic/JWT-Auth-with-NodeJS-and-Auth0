@@ -4,13 +4,13 @@ UIUpdate.loggedIn = function (token) {
   UIUpdate.alertBox(
     `Just logged in<br>Token:<br>${localStorage.getItem('access_token')}`
   );
-  loginModalBtn.classList.add('d-none');
+  loginBtn.classList.add('d-none');
   logoutBtn.classList.remove('d-none');
 };
 
 UIUpdate.loggedOut = function () {
   localStorage.removeItem('access_token');
-  loginModalBtn.classList.remove('d-none');
+  loginBtn.classList.remove('d-none');
   logoutBtn.classList.add('d-none');
 };
 
