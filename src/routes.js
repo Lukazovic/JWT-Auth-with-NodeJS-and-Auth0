@@ -1,7 +1,11 @@
 const { Router } = require('express');
 const app = require('./app');
 
+const UserController = require('./app/controllers/UserController');
+
 const routes = new Router();
+
+routes.post('/login', UserController.login);
 
 routes.get('/status', (req, res) => {
   const localTime = new Date().toLocaleTimeString();
