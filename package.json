@@ -1,0 +1,6 @@
+{
+  "name": "JWT-Auth-with-NodeJS-and-Auth0",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT"
+}
