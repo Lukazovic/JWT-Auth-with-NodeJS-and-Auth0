@@ -10,9 +10,7 @@ class UserController {
     const { username, password } = req.body;
 
     if (!username || !password) {
-      return res
-        .status(400)
-        .json({ error: 'You must provide a username and password' });
+      return res.status(400).send('You need a username and password');
     }
 
     const user = users.find(userTest => {
@@ -20,7 +18,7 @@ class UserController {
     });
 
     if (!user) {
-      return res.status(401).json({ error: 'User not found' });
+      return res.status(401).send('User not found');
     }
 
     const token = jwt.sign(
@@ -32,7 +30,7 @@ class UserController {
       { expiresIn: '3 hours' }
     );
 
-    res.json({ username, token });
+    res.send({ access_token: token });
   }
 }
 
